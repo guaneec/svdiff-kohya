@@ -154,7 +154,6 @@ class LoRANetwork(torch.nn.Module):
         # convert from fp16 to fp32 because amp scaler doesn't like fp16s
         for lora in [*self.text_encoder_loras, *self.unet_loras]:
             lora.to(torch.float)
-        if 
         text_encoder.requires_grad_(True)
         unet.requires_grad_(True)
 
